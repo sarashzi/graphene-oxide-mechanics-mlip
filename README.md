@@ -42,3 +42,24 @@ The computational workflow consists of:
 05_production_md/
     md_finetuned.py
     job_finetuned.sh
+
+models/
+    mace_go_pbe_finetuned.model
+
+examples/
+    go_20_oxidation_OH_O_1.data
+    go_larger_system_20_oxidation_OH_O_1.data
+
+
+
+```markdown
+## Example structures
+
+Two example graphene oxide structures with 20% oxidation and OH/O = 1 are provided:
+
+- `go_20_oxidation_OH_O_1.data`: example structure for the foundation-model MD and DFT dataset-generation workflow.
+- `go_larger_system_20_oxidation_OH_O_1.data`: larger example structure for production MD and uniaxial tensile simulations using the fine-tuned MACE potential.
+
+## Fine-tuned model
+
+The `models/` directory contains the fine-tuned MACE potential used for the production molecular dynamics simulations. The model was fine-tuned on PBE DFT energies and atomic forces for graphene oxide configurations containing C, O, and H.
