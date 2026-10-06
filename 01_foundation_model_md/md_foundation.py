@@ -14,14 +14,14 @@ from ase.md.velocitydistribution import ZeroRotation
 strain_rate = 1e-6 #fs
 dt_fs = 0.5
 dt = dt_fs * units.fs 
-system_name = 'GO-10-1N'
+system_name = 'GO-20-1'
 n_steps_npt = 100000
 
 T_init = 300
 total_strain = 0.17 # shall be changed based on diffrent oxidation and OH/O ratio in GO
 
 macemp = mace_mp(dispersion=True) # I use for oh and O effect 
-atoms = read('go-10-1hypbc_atomicN.data' , format= 'lammps-data')
+atoms = read('/examples/go_20_oxidation_OH_O_1.data' , format= 'lammps-data') # GO with 20 % oxidation and OH/O = 1
 atoms.calc = macemp
 
 #---- minimazation ------------------
