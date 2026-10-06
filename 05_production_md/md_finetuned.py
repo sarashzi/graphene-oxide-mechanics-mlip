@@ -16,16 +16,16 @@ from ase.io.trajectory import Trajectory
 strain_rate = 1e-6 #fs
 dt_fs = 0.5
 dt = dt_fs * units.fs 
-system_name = 'GO-10-1'
+system_name = 'GO-20-1'
 n_steps_npt = 50000
 
 T_init = 300
 total_strain = 0.17 # can be changed based on the system type (oxidation % and OH/O)
 
 #atoms = read('npt_GO-10-1.traj' , -1)
-atoms = read('10-1y-atomic-c.data' , format= 'lammps-data')
+atoms = read('../examples/Go_larger_system_20_oxidation_oh-o_1.data' , format= 'lammps-data')
 atoms.calc = MACECalculator(
-    model_paths=['../../finetune-MATPES-PBE-01-6_compiled.model'], # the fine-tuned model
+    model_paths=['../models/finetune-MATPES-PBE-01-6_compiled.model'], # the fine-tuned model
     device="cuda", 
     default_dtype="float64"
 )
