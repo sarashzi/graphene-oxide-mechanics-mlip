@@ -12,7 +12,7 @@ from ase.md.velocitydistribution import ZeroRotation
 from mace.calculators import MACECalculator
 from ase.io.trajectory import Trajectory
 
-#----- parameters --------------------
+#----- parameters of the system --------------------
 strain_rate = 1e-6 #fs
 dt_fs = 0.5
 dt = dt_fs * units.fs 
@@ -20,13 +20,13 @@ system_name = 'GO-10-1'
 n_steps_npt = 50000
 
 T_init = 300
-total_strain = 0.17 
+total_strain = 0.17 # can be changed based on the system type (oxidation % and OH/O)
 
 #atoms = read('npt_GO-10-1.traj' , -1)
 atoms = read('10-1y-atomic-c.data' , format= 'lammps-data')
 atoms.calc = MACECalculator(
-    model_paths=['../../finetune-MATPES-PBE-01-6_compiled.model'],
-    device="cuda",
+    model_paths=['../../finetune-MATPES-PBE-01-6_compiled.model'], # the fine-tuned model
+    device="cuda", 
     default_dtype="float64"
 )
 #---- minimazation ------------------
@@ -50,7 +50,7 @@ MaxwellBoltzmannDistribution(atoms, temperature_K=T_init)
 Stationary(atoms)
 ZeroRotation(atoms)
 
-#--------- NPT ---------------------
+#--------- NPT (equilbirum) ---------------------
 mask = (0, 1, 0)
 
 dyn = NPT(atoms,
@@ -81,7 +81,7 @@ write(f"{system_name}_after_npt.lammps-data", atoms)
 print("Equilbrium (NPT) done!") 
 
            
-#----------NVT-------------------
+#----------NVT( production, deforming in the y direction ) -------------------
 print("Starting NVT and uniaxial deformation in y direction")
 
 cell0 = atoms.get_cell()
