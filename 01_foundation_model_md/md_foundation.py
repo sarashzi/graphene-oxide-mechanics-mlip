@@ -21,7 +21,7 @@ T_init = 300
 total_strain = 0.17 # shall be changed based on diffrent oxidation and OH/O ratio in GO
 
 macemp = mace_mp(dispersion=True) # I use for oh and O effect 
-atoms = read('/examples/go_20_oxidation_OH_O_1.data' , format= 'lammps-data') # GO with 20 % oxidation and OH/O = 1
+atoms = read('../examples/go_20_oxidation_OH_O_1.data' , format= 'lammps-data') # GO with 20 % oxidation and OH/O = 1
 atoms.calc = macemp
 
 #---- minimazation ------------------
