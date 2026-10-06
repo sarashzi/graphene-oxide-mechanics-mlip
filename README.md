@@ -1,12 +1,14 @@
 # Graphene Oxide Mechanics with Machine-Learning Interatomic Potentials
 
-This repository contains the computational workflow and scripts associated with the study:
+## Citation
 
-**“Oxidation-dependent mechanical response of graphene oxide: Improving the reliability of atomistic modelling by ab initio machine learning simulations”**
+This repository contains code, example structures, and the fine-tuned MACE potential associated with:
 
-S. Shahbazi Fashtali, P. M. Piaggi, and G. Zollo  
-*Physical Review Materials*
+S. Shahbazi Fashtali, P. M. Piaggi, and G. Zollo,  
+“Oxidation-dependent mechanical response of graphene oxide: Improving the reliability of atomistic modelling by ab initio machine learning simulations,”  
+*Physical Review Materials* (accepted for publication, 2026).
 
+The DOI and complete bibliographic information will be added after publication.
 ## Overview
 
 This work investigates the mechanical response of graphene oxide (GO) using a machine-learning interatomic potential based on MACE and density-functional theory (DFT) reference calculations.
