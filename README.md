@@ -30,7 +30,8 @@ The computational workflow consists of:
     job_foundation.sh
 
 02_dft_dataset_generation/
-    extract_snapshots_qe.ipynb
+    extract_snapshots_qe_npt.ipynb
+    extract_snapshots_qe_nvt.ipynb
 
 03_dataset_preparation/
     data_preparation.py
