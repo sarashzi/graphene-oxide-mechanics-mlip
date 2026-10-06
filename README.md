@@ -58,7 +58,7 @@ examples/
 Two example graphene oxide structures with 20% oxidation and OH/O = 1 are provided:
 
 - `go_20_oxidation_OH_O_1.data`: example structure for the foundation-model MD and DFT dataset-generation workflow.
-- `go_larger_system_20_oxidation_OH_O_1.data`: larger example structure for production MD and uniaxial tensile simulations using the fine-tuned MACE potential.
+- `Go_larger_system_20_oxidation_OH_O_1.data`: larger example structure for production MD and uniaxial tensile simulations using the fine-tuned MACE potential.
 
 ## Fine-tuned model
 
